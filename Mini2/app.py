@@ -13,6 +13,7 @@ db_path = "mydb.db"
 
 #function to create the table if it doesn't exist
 #deviated from basic structure with the assumption large amounts of data won't be stored but could use a file to make it bigger.
+
 def create_table():
     with sqlite3.connect(db_path) as con:
         con.execute('''
@@ -28,7 +29,7 @@ def create_table():
         con.commit()
 
 #home Page
-@app.route('/', methods=['POST'])
+@app.route('/', methods=["GET", 'POST'])
 def home():
     return render_template('index.html')
 
