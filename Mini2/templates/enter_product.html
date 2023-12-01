@@ -1,0 +1,34 @@
+<!-- templates/enter_product.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Enter Product Data</title>
+</head>
+<body>
+    <!--product data stuff for entering-->
+    <h1>Enter Product Data</h1>
+    <form method="POST" action="/enter_product">
+        <label for="category">Product Category:</label>
+        <input type="text" name="category" required><br>
+
+        <label for="description">Product Description:</label>
+        <input type="text" name="description" required><br>
+
+        <label for="price">Price:</label>
+        <input type="text" name="price" required><br>
+
+        <label for="code">Product Code:</label>
+        <input type="text" name="code" required><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    
+    <!--send back button-->
+    <form method="POST" action="/">
+        <h3>Choose To Go Back</h3>
+        <input type="submit" value="Home">
+    </form> 
+
+</body>
+</html>

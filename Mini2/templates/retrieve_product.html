@@ -1,0 +1,45 @@
+<!-- templates/retrieve_product.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Retrieve Product Data</title>
+</head>
+<body>
+    <!-- gets that sweet sweet data that was inputted, outputted-->
+    <h1>Retrieve Product Data</h1>
+    <form method="POST" action="/retrieve_product">
+        <label for="category">Product Category:</label>
+        <input type="text" placeholder= "typing nothing displays all" name="category"><br>
+        <input type="submit" value="Retrieve">
+    </form>
+    <!-- see's if there is anything to display-->
+    {% if products %}
+        <h2>Product Details</h2>
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Code</th>
+            </tr>
+            {% for product in products %}
+                <tr>
+                    <td>{{ product[0] }}</td>
+                    <td>{{ product[1] }}</td>
+                    <td>{{ product[2] }}</td>
+                    <td>{{ product[3] }}</td>
+                    <td>{{ product[4] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+    <br>
+    <!--send back button-->
+    <form method="POST" action="/">
+        <h3>Choose To Go Back</h3>
+        <input type="submit" value="Home">
+    </form> 
+</body>
+</html>
